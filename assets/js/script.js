@@ -1,11 +1,37 @@
 const urlBaseApi = 'https://striveschool-api.herokuapp.com/books'
+const spinner = document.querySelector('.spinner-border')
+
 
 const getBooks = async () => {
+    toggleSpinnerVisibility(true)
+    changeVisibilty('.row', false)
     try {
         const response = await fetch(urlBaseApi)
         return response.json()
     } catch (e) {
         console.error(e)
+    } finally {
+        toggleSpinnerVisibility(false)
+        changeVisibilty('.row', true)
+    }
+}
+
+const changeVisibilty = (container, boolean) => {
+    if (boolean) {
+        document.querySelector(container).classList.remove('d-none')
+    } else {
+        document.querySelector(container).classList.add('d-none')
+    }
+}
+
+const toggleSpinnerVisibility = async (boolean) => {
+    if (boolean) {
+        spinner.classList.remove('d-none')
+        spinner.nextElementSibling.classList.remove('d-none')
+    } else {
+        spinner.classList.add('d-none')
+        spinner.nextElementSibling.classList.add('d-none')
+
     }
 }
 

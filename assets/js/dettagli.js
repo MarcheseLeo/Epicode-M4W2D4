@@ -5,11 +5,11 @@ const spinner = document.querySelector('.spinner-border')
 const toggleSpinnerVisibility =  (boolean) =>{
     if(boolean){
         spinner.classList.remove('d-none')
-        spinner.nextSibling.remove('d-none')
+        spinner.nextElementSibling.classList.remove('d-none')
     }
     else{
         spinner.classList.add('d-none')
-        spinner.nextSibling.remove('d-none')
+        spinner.nextElementSibling.classList.add('d-none')
     }
 }
 
