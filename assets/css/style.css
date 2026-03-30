@@ -182,3 +182,19 @@ h1, h2, h3, h4, h5, .serif-font {
     background-color: #F8F9FA;
     color: #333;
 }
+
+.details-card {
+            background-color: var(--card-bg);
+            border: 1px solid #EAE3D9;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .book-cover-large {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+        }

@@ -21,7 +21,10 @@ const generateCard = (book) => {
                         <span class="book-tag">${book.category}</span>
                     </div>
                     <div class="mt-3">
-                        <div class="book-price mb-2">€ ${book.price}</div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="book-price">€ ${book.price}</div>
+                            <a href="./dettagli.html?id=${book.asin}" class="text-decoration-none small fw-bold" style="color: var(--accent-color);">Dettagli &rarr;</a>
+                        </div>
                         <div class="d-flex gap-2">
                             <button class="btn btn-add flex-grow-1" onclick="addToCart(this)">Aggiungi</button>
                             <button class="btn btn-hide px-3" onclick="hideBook(this)">Nascondi</button>
