@@ -1,0 +1,184 @@
+:root {
+    --bg-color: #FAF7F2;
+    --text-main: #2D2825;
+    --accent-color: #A86438;
+    --accent-hover: #8A4F2A;
+    --delete-color: #DC3545;
+    --card-added-border-color: #52b788;
+    --card-added-shadow-color: #34a0a4ab;
+    --card-bg: #FFFFFF;
+    --button-add-color: #74c69d;
+    /* Nuovi font */
+    --font-serif: 'EB Garamond', serif;
+    --font-sans: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* Tipografia Raffinata */
+h1, h2, h3, h4, h5, .serif-font {
+    font-family: var(--font-serif);
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+/* Layout Principale */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar - Carrello (Sinistra) */
+.sidebar-cart {
+    width: 320px;
+    background-color: var(--bg-color);
+    border-right: 1px solid #EAE3D9;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.cart-item {
+    border-bottom: 1px dashed #EAE3D9;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+/* Pulsante Elimina Carrello */
+.cart-delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--delete-color);
+    padding: 0 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cart-delete-btn:hover {
+    color: #bd2130;
+}
+
+/* Topbar */
+.topbar {
+    background-color: var(--bg-color);
+}
+
+.search-bar {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D9;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Card dei Libri */
+.book-card {
+    background-color: var(--card-bg);
+    border: 1px solid #EAE3D9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card.added-to-cart {
+    box-shadow: 0 4px 12px var(--card-added-shadow-color);
+    border: 1px solid var(--button-add-color);
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.book-card.added-to-cart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--card-added-shadow-color);
+}
+
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-tag {
+    background-color: #F4F0EA;
+    color: #6B635E;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.book-price {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Bottoni */
+.btn-add {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-add.added {
+    background-color: var(--button-add-color);
+}
+
+.btn-add:hover {
+    background-color: var(--accent-hover);
+    color: white;
+}
+
+.btn-add.added:hover {
+    background-color: var(--button-add-color);
+    color: white;
+}
+
+.btn-hide {
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.btn-hide:hover {
+    background-color: #F8F9FA;
+    color: #333;
+}
